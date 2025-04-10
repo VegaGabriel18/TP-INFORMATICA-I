@@ -4,7 +4,6 @@
 //Vega Gabriel Ezequiel Martin 1R5
 int main() {
         float imc;
-        int selector;
         float peso , altura;
   
         printf("Bienvenido a la calculadora de IMC\n");
