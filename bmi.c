@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <windows.h>
+
 
 //Vega Gabriel Ezequiel Martin 1R5
 int main() {
@@ -7,7 +7,7 @@ int main() {
         float peso , altura;
   
         printf("Bienvenido a la calculadora de IMC\n");
-        Sleep(1000);
+        
         printf("Ingrese su peso en kilogramos: ");
         scanf("%f", &peso);
 
@@ -15,7 +15,7 @@ int main() {
         scanf("%f", &altura);
 
         printf("El peso y la altura ingresados son: %.2f kg y %.2f m\n", peso, altura);
-        Sleep(1000);
+        
         printf("\n");
    
       
