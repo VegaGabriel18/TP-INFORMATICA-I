@@ -9,13 +9,27 @@ int main() {
         float altura;
   
         printf("Bienvenido a la calculadora de IMC\n");
+
+        do{
+                printf("Ingrese su peso en kilogramos: ");
+                scanf("%f", &peso);
+                if(peso < 0)
+                {
+                   printf("Error: El peso debe ser positivo \n");
+                }
         
-        printf("Ingrese su peso en kilogramos: ");
-        scanf("%f", &peso);
+        }while(peso < 0);       
 
-        printf("Ingrese su altura en metros: ");
-        scanf("%f", &altura);
-
+        do{
+                printf("Ingrese su altura en metros: ");
+                scanf("%f", &altura);
+                if(altura < 0)
+                {
+                   printf("Error: La altura debe ser positivo \n");     
+                }        
+        
+        }while(altura < 0);
+        
         printf("El peso y la altura ingresados son: %.2f kg y %.2f m\n", peso, altura);
         printf("\n");
    
