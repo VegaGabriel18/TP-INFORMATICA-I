@@ -16,7 +16,13 @@ int main()
     int nota=0;
     
     printf("Ingrese la cantidad de estudiantes a evaluar :");
-    scanf("%d", &estudiantes);
+    do{
+        scanf("%d", &estudiantes);
+        if(estudiantes < 0)
+        { 
+           printf("Ingrese una cantidad positiva:");
+        }   
+    }while (estudiantes < 0);
     
     for( int i=1 ; i<= estudiantes ; i++)
     {
