@@ -3,17 +3,26 @@
 #define TAM 5
 
 //Repositorio "https://github.com/VegaGabriel18/TP-INFORMATICA-I"
+void carga_valores(int codigos [],float precios[],int *codemax, float *max, int *codemin, float *min);
+void imprimir(int codigos[],float precios[], int codemax, float max, int codemin, float min);
 int main()
-{   float max=0;
-    int codemax=0;
-    
-    float min=0;
-    int codemin=0;
+{   float max=0, min=0;
+    int codemin=0,codemax=0;
     
     int codigos[TAM]={0};
     float precios[TAM]={0};
     
-    printf("Ingrese %d productos, se pedira codigo y precio \n", TAM);
+    carga_valores(codigos,precios,&codemax, &max, &codemin, &min);
+    imprimir(codigos,precios,codemax, max, codemin, min);
+    
+    
+    
+    
+    return 0;
+}
+void carga_valores(int codigos[], float precios[], int *codemax, float *max, int *codemin, float *min){
+    
+  printf("Ingrese %d productos, se pedira codigo y precio \n", TAM);
     printf("-----------------------------------------------------------\n");
     for(int i=0; i < TAM ; i++)
     {  
@@ -31,23 +40,23 @@ int main()
             
             if(precios[i] < 0)
             {
-                printf("Error. Ingrese un precio > 0\n");
+                printf("Error. Ingrese un precio >= 0\n");
                 continue;
             }
             if(i == 0)
-             min = precios[i];
+             *min = precios[i];
             
             
             
-            if(precios[i] > max)
+            if(precios[i] > *max)
             {
-                max=precios[i];
-                codemax = codigos[i];
+                *max=precios[i];
+                *codemax = codigos[i];
             }
-            if(precios[i] <= min)
+            if(precios[i] <= *min)
             {
-                min=precios[i];
-                codemin = codigos[i]; 
+                *min=precios[i];
+                *codemin = codigos[i]; 
             }
             
             
@@ -55,6 +64,9 @@ int main()
         
         printf("-----------------------------------------------------------\n");
     }
+}
+void imprimir(int codigos[], float precios[],int codemax, float max, int codemin, float min){
+
     printf("\n");
     printf("%-12s %-12s\n", "CODIGO", "PRECIO");
     for(int i = 0; i < TAM ; i++)
@@ -66,7 +78,5 @@ int main()
     printf("\n");
     printf("El mas caro,   [%d]   PRECIO:%.2f \n", codemax, max );
     printf("El mas barato, [%d]   PRECIO:%.2f \n", codemin , min);
-    
-    
-    return 0;
+
 }
